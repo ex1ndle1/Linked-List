@@ -20,14 +20,42 @@ class LinkedList:
             current = current.next
 
         print('None')
-my_list = LinkedList()
-first = Node(10)
-second  = Node(20)
-third = Node(30)
-my_list.head = first
-first.next  = second
-second.next = third
+        
+    def delete_value(self, key):
+     current = self.head
 
+     if not current:
+        return
+     if current.data == key:
+        self.head = current.next
+        current = None
+        return
+     prev = None
+     while current and current.data != key:
+        prev = current
+        current = current.next
+
+
+     if not current:
+        return
+     prev.next = current.next
+     current = None
+    def prepend(self, data): ##########################method for adding at the first place
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
+    def append(self, data): ###########method for adding at the last place
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        
+        last = self.head
+        while last.next:
+            last = last.next
+        last.next = new_node
+    
 
 
 

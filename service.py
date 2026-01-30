@@ -1,13 +1,18 @@
-from main import Queue , Stack
-
-browser_history = Stack()
-browser_history.push("google.com")
-browser_history.push("github.com")
-browser_history.push("youtube.com")
-
-check_out_queue = Queue()
+from main import Queue , Stack, LinkedList
 
 
-check_out_queue.enqueue("Customer 1")
-check_out_queue.enqueue("Customer 2")
-check_out_queue.enqueue("Customer 2")
+
+my_list = LinkedList()
+my_list.print_all_list()
+my_list.prepend(10)  
+my_list.prepend(20)
+
+
+my_list.delete_value(10)
+my_list.print_all_list()
+
+my_list.delete_value(20)
+my_list.print_all_list()
+
+my_list.delete_value(30)
+my_list.print_all_list()
